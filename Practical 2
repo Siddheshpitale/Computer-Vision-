@@ -1,0 +1,6 @@
+Code:
+clc;clear;closeall;
+img=imread('saturn.png'); img = im2double(img); gray_img = rgb2gray(img)average_filter = ones(3, 3) / 9;
+gaussian_filter = fspecial('gaussian', [5, 5], 1.5); smoothed_avg = imfilter(gray_img, average_filter);smoothed_gaussian = imfilter(gray_img, gaussian_filter);
+figure; subplot(1,3,1)imshow(gray_img);
+title('Original Image');subplot(1,3,2),imshow(smoothed_avg),title('Smoothed (Average)');subplot(1,3,3),imshow(smoothed_gaussian),title('Smoothed (Gaussian)');
